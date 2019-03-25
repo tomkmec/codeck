@@ -1,0 +1,29 @@
+title: Scope for 0.1.0
+authors:
+  - {name: Tom Kmec, email: tom.kmec@gmail.com, twitter: tomkmec}
+
+pages:
+  - layout: title-subtitle
+    title: Codeck 0.1.0
+    subtitle: Scope and testcase
+  - layout: title-text
+    title: Basic layout
+    text: |
+      * Basic structure
+        * Basic metadata: title, authors - not used anywhere
+        * Basic layout parsing: 
+          * `title` and `text` types
+          * dash separates vertically with precedence, slash horizontally
+          * width percentage can be appended for horizontal split
+      * Text is treated as markdown
+      * Fixed text size
+  - layout: title-text30/text70
+    title: Advanced layout
+    text:
+      - |
+        # Advanced layout
+        # may be little less obvious
+      - '```javascript
+var test="this is a test";
+return 42;
+```'

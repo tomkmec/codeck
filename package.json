@@ -1,0 +1,16 @@
+{
+  "name": "codeck",
+  "version": "0.0.1",
+  "author": "Tom Kmec <tom.kmec@gmail.com>",
+  "license": "GPLv3",
+  "devDependencies": {
+    "jest": "^24.5.0"
+  },
+  "dependencies": {
+    "remarkable": "^1.7.1",
+    "vue": "^2.6.10"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}

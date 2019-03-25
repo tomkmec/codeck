@@ -1,0 +1,39 @@
+title: Scope for `future`
+theme: basic
+authors:
+  - {name: Tom Kmec, email: tom.kmec@gmail.com, twitter: tomkmec}
+style:
+    pages: center
+
+pages:
+  - layout: title-subtitle
+    title: Codeck `future`
+    subtitle: Just a bunch of ideas, to be staged
+  - layout: title-text
+    title: Basic layout
+    text: |
+      * Text is treated as markdown
+      * `Obviously`
+  - layout: title-text30/text70
+    title: Advanced layout
+    text:
+      - |
+        # Advanced layout
+        # may be little less obvious
+      - '```javascript
+var test="this is a test";
+return 42;
+```'
+  - includedPage.yaml
+  - layout: title-text/browser
+    title: Embedded browser
+    text: Some text here
+    browser:
+      url: https://google.com
+  - layout: title-text20/livecode80
+    text: https://microsoft.github.io/monaco-editor
+    livecode: lol IDK
+  - layout: title-text
+    title: diagrams
+    text: https://mermaidjs.github.io, http://www.nomnoml.com/
+

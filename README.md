@@ -1,2 +1,3 @@
 # codeck
-show yar code arrgh
+
+Text-based presentation generator focused on code/software/design presentations.
