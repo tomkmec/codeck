@@ -2,12 +2,19 @@
   "name": "codeck",
   "version": "0.0.1",
   "author": "Tom Kmec <tom.kmec@gmail.com>",
+  "repository": "github:tomkmec/codeck",
+  "private": "true",
   "license": "GPLv3",
   "devDependencies": {
-    "jest": "^24.5.0"
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "babel-loader": "^8.0.5",
+    "jest": "^24.5.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   },
   "dependencies": {
-  	"js-yaml": "^3.13.0",
+    "js-yaml": "^3.13.0",
     "remarkable": "^1.7.1",
     "vue": "^2.6.10"
   },
