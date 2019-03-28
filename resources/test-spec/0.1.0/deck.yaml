@@ -3,7 +3,7 @@ authors:
   - {name: Tom Kmec, email: tom.kmec@gmail.com, twitter: tomkmec}
 
 pages:
-  - layout: title-subtitle
+  - layout: title/subtitle
     title: Codeck 0.1.0
     subtitle: Scope and testcase
   - layout: title-text
@@ -17,7 +17,7 @@ pages:
           * width percentage can be appended for horizontal split
       * Text is treated as markdown
       * Fixed text size
-  - layout: title-text30/text70
+  - layout: title/text30-text70
     title: Advanced layout
     text:
       - |

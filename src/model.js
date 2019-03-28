@@ -25,18 +25,18 @@ class Page {
   }
 
   parse(model) {
-    const layoutDef = this.parseLayoutDef(model.layout);
+    this.layout = this.parseLayoutDef(model.layout);
   }
 
   parseLayoutDef(def) {
     const typecounter = {};
     const regex = /([a-zA-Z]+)(\d*)/;
-    return (def || '').split('-').map((rowDef) => {
-      const cols = rowDef.split('/');
-      return cols.map((colDef) => {
+    return (def || '').split('/').map((rowDef) => {
+      const colDefs = rowDef.split('-');
+      const cols = colDefs.map((colDef) => {
         const match = regex.exec(colDef.trim());
         const type = match ? match[1] : "text";
-        const width = (match == null || isNaN(match[2])) ? 0 : parseFloat(match[2]) / 100.0; //TODO compute missing widths
+        const width = (match == null || isNaN(match[2]) || match[2] == '') ? 0 : parseFloat(match[2]) / 100.0;
         typecounter[type] = isNaN(typecounter[type]) ? 0 : typecounter[type] + 1;
         return {
           type: type,
@@ -44,6 +44,12 @@ class Page {
           width: width
         }
       })
+      const noWidth = cols.filter((c) => c.width == 0);
+      if (noWidth.length > 0) {
+        const remainingWidth = Math.max(0, 1 - cols.reduce((total, col) => total + col.width, 0))
+        noWidth.forEach(col => {col.width = remainingWidth / noWidth.length});
+      }
+      return cols;
     })
   }
 }
