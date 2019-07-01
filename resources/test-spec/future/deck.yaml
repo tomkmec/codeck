@@ -9,6 +9,8 @@ pages:
   - layout: title-subtitle
     title: Codeck `future`
     subtitle: Just a bunch of ideas, to be staged
+    # http://tinyurl.com/y37aa79r
+    
   - layout: title-text
     title: Basic layout
     text: |
