@@ -1,10 +1,10 @@
-import * as model from './model.js'
+import { LayoutEngine } from './DefaultLayoutEngine.js'
 
-describe('Page.parseLayoutDef', () => {
-  const page = new model.Page();
+describe('LayoutEngine.parseLayoutDef', () => {
+  const layoutEngine = new LayoutEngine();
 
   test.each([null, '', ' '])('empty layout', (val) => {
-    const result = page.parseLayoutDef(val);
+    const result = layoutEngine.parseLayoutDef(val);
     expect(result).toHaveLength(1);
     expect(result[0]).toHaveLength(1);
     expect(result[0][0]).toMatchObject({
@@ -15,7 +15,7 @@ describe('Page.parseLayoutDef', () => {
   });
 
   test.each(['element', ' element100 '])('single layout element', (val) => {
-    const result = page.parseLayoutDef(val);
+    const result = layoutEngine.parseLayoutDef(val);
     expect(result).toHaveLength(1);
     expect(result[0]).toHaveLength(1);
     expect(result[0][0]).toMatchObject({
@@ -26,7 +26,7 @@ describe('Page.parseLayoutDef', () => {
   });
 
   test.each(['element / element100', 'element/element'])('two-rows layout', (val) => {
-    const result = page.parseLayoutDef(val);
+    const result = layoutEngine.parseLayoutDef(val);
     expect(result).toHaveLength(2);
     expect(result[0]).toHaveLength(1);
     expect(result[1]).toHaveLength(1);
@@ -43,7 +43,7 @@ describe('Page.parseLayoutDef', () => {
   });
 
   test('one-row, two-cols layout', () => {
-    const result = page.parseLayoutDef('element-another');
+    const result = layoutEngine.parseLayoutDef('element-another');
     expect(result).toHaveLength(1);
     expect(result[0]).toHaveLength(2);
     expect(result[0][0]).toMatchObject({
@@ -59,7 +59,7 @@ describe('Page.parseLayoutDef', () => {
   });
 
   test('complex layout', () => {
-    const result = page.parseLayoutDef('element/element20-another/x-y-x20');
+    const result = layoutEngine.parseLayoutDef('element/element20-another/x-y-x20');
     expect(result).toHaveLength(3);
     expect(result[0]).toHaveLength(1);
     expect(result[1]).toHaveLength(2);
