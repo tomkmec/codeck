@@ -18,7 +18,7 @@ class Presentation {
 
 class Page {
   constructor(source = {}, layoutEngine = new LayoutEngine()) {
-    layoutEngine.parseLayout(source);
+    layoutEngine.parsePageLayout(source);
   }
 
 }

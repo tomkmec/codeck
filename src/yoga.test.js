@@ -21,11 +21,11 @@ describe('Page.parseLayoutDef', () => {
 
 	root.setFlexDirection(yoga.FLEX_DIRECTION_ROW)
 	root.calculateLayout(500, 300, yoga.DIRECTION_LTR);
-	console.log(root.getComputedLayout());
+	// console.log(root.getComputedLayout());
 	// {left: 0, top: 0, width: 500, height: 300}
-	console.log(node1.getComputedLayout());
+	// console.log(node1.getComputedLayout());
 	// {left: 150, top: 0, width: 100, height: 100}
-	console.log(node2.getComputedLayout());
+	// console.log(node2.getComputedLayout());
 	// {left: 250, top: 0, width: 100, height: 100}
 
 	test('yoga', () => {

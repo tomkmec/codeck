@@ -2,7 +2,7 @@ import yoga, {Node} from 'yoga-layout-prebuilt';
 
 class LayoutEngine {
 
-  parseLayout(page = {layout:''}) {
+  parsePageLayout(page = {layout:''}) {
     const rows = this.parseLayoutDef(page.layout || this.inferLayout(page)) 
 
     const rootNode = Node.create();
@@ -59,7 +59,7 @@ class LayoutEngine {
     });
 
     rows.forEach(row => row.forEach(element => {
-      element.getContent = (typecounter[element.type] === 0)
+      element.getContent = (typecounter.get(element.type) === 0)
         ? (pageDef) => pageDef[element.type]
         : (pageDef) => pageDef[element.type][element.index]
     }));
