@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style type="text/css">
+        body {
+
+        }
+        .row {
+
+        }
+        .row:after {
+              content: "";
+              display: table;
+              clear: both;
+        }
+        .col {
+            float: left;
+        }
+    </style>
 </head>
 <body>
-	<div id="app">
-        {{ message }}
+    <div id="app">
+        <div class="row" id="row1">
+            <div class="col" style="width:100%">
+                {{ message }}
+            </div>
+        </div>
+        <div class="row" id="row2">
+            <div class="col" style="width:10%">
+                a
+            </div>
+            <div class="col" style="width:90%">
+                b
+            </div>
+        </div>
     </div>
-	<script type="module">
-		import {init} from './bundle.js'
-		init();
-	</script>
+    <script type="module">
+        import {init} from './bundle.js'
+        init();
+    </script>
 </body>
 </html>
